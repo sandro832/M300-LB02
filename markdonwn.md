@@ -22,6 +22,10 @@ Virtuelle Maschinen haben aber nach wie vor ihre Daseinsberechtigung; zum Beispi
 | docker stop | Haltet docker container an | docker stop [ID des Containers] 
 | docker commit | erstellt ein neues image mit den neuen änderungen| docker commit [ID des Containers] 
 
+### Netzwerkplan
+
+![Netzwerkplan](https://github.com/sandro832/M300-LB02/blob/main/Dokumentation/Images/Unbenannt.PNG)
+
 
 ### Arbeitschritte
 Bei meinem Auftrag ging es darum ein Webserer zu hosten und diesmal mithilfe von Container anstatt Virtuelle Machinen. So werden nähmlich viel weniger Computer ressourcen verwendet und das hosten ist auch einfach gestahltet.
@@ -29,8 +33,8 @@ Bei meinem Auftrag ging es darum ein Webserer zu hosten und diesmal mithilfe von
 #### 1.1 Docker file beschaffung
 Zuerst musste ich mir ein Docker File beschaffen was ich von einem Kollegen bekam. Das sieht ungefähr so aus. 
 
+![Dockerfile](https://github.com/sandro832/M300-LB02/blob/main/Dokumentation/Images/Dockerfile.PNG)
 
-Bild
 
 #### 1.2 Container image 
 Mit dem command "docker build" habe ich dan den container gebaut mit den konfigurationen die ich im dockerfile gegeben habe. Wichtig hier ist, dass man das Dockerfile selbst nicht im Pfad angeben muss. Nur der Ordner, in welchem sich das File befindet, muss angegeben werden. Das File muss aber zwingend "Dockerfile" heissen.
@@ -43,10 +47,7 @@ Hier sieht man noch die Portweiterleitung von 80 auf 8080.
 #### 1.4 index.html file
 Das index file gab es noch zu erstellen das es diese nicht beim deployment selbst erstellt hat. Im file habe ich noch den Link zu meinem persöhnlichen repository angegeben. Beim Index handelt es sich nathürlich um den Inhalt des Webservers der gezeigt werden soll. Man kan auch kein index file haben dan wird die default page angezeigt. Mein index file sieht so aus:
 
-
-
-Bild
-
+![indexfile](https://github.com/sandro832/M300-LB02/blob/main/Dokumentation/Images/indexfile.PNG)
 
 
 Das File musste ich dan noch in die VM bringen was mit folgendem Kommando ging:
@@ -58,14 +59,13 @@ Das File musste ich dan noch in die VM bringen was mit folgendem Kommando ging:
 
 Als lezter Schritt musste ich noch die Verbindung testen. Das konnte ich ganz einfach über die Localhost addresse mit dem Port 187 den ich im Portforwarding angegeben habe. 
 
-
-Bild
+![Webtest](https://github.com/sandro832/M300-LB02/blob/main/Dokumentation/Images/Webtest.PNG)
 
 Sicherheit
 
 Wie bei jeder neuen Software-Technologie gilt auch für Docker-Container: Sie sind keine Wunderwaffe und können alleine nicht jedes Problem lösen. Zwar kann Software in einem Container standardmäßig sicherer sein als Software, die auf einem Bare-Metal-System läuft. Allerdings ist diese Sicherheit trügerisch, denn sie sagt nichts über die Sicherheitsstandards außerhalb des Docker-Containers, beziehungsweise dessen Umgebung aus. Selbstverständlich können Container einer Anwendung eine zusätzliche Sicherheitsebene hinzufügen, aber nur als Teil eines allgemeinen Konzeptes zur Sicherung einer Anwendung im Gesamtkontext.
 
-https://www.computerwoche.de/a/die-wichtigsten-vor-und-nachteile-von-docker-containern,3546671
+Quelle: https://www.computerwoche.de/a/die-wichtigsten-vor-und-nachteile-von-docker-containern,3546671
 
 Wie oben beschrieben sorgt die Docker technologie nicht für Sicherheit und man sollte darum zusätliche service und dienste aufsetzen umd dies zu gewährleisten. Eine davon nennt sich Cadvisor. Es ist ein Überwachungstool von google das sich sehr einfach aufsetzen lässt. Dafür benutzt man nur folgenden befehl um ein container zu erstehlen auf dem diese Webapplikation läuft: 
 
@@ -73,7 +73,7 @@ Wie oben beschrieben sorgt die Docker technologie nicht für Sicherheit und man 
 
 Noch zu beachten ist das man ein Port wählt der nicht besetzt ist da es sonst zu komplikationen kommen könnte. In meinem Beispiel habe ich 188 genommen da das nahe an 187 dran ist was ich für den Webserver benutzt habe. Den Zugriff konnte ich mit 127.0.0.1:188 machen also musste ich nur den Port anpassen.
 
-Bild
 
+![cadvisor](https://github.com/sandro832/M300-LB02/blob/main/Dokumentation/Images/Cadvisor.PNG)
 
 
