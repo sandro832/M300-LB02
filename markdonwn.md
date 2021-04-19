@@ -69,7 +69,7 @@ Wie bei jeder neuen Software-Technologie gilt auch für Docker-Container: Sie si
 
 Es ergibt Sinn, dass man sich nicht als root User einloggt, damit man kritische sudo-Befehle nicht ohne Passwort ausführen kann. Ohne das hat der Container ein zusätliches Sicherheitsrisiko da änderungen einfach so gemacht werden können ohne immer das Passwort einzugeben. Mit folgender konfiguration im Dockerfile sperrt man den sudo user:
 
-![cadvisor]()
+![BlockSudo](https://github.com/sandro832/M300-LB02/blob/main/Dokumentation/Images/BlockSudo.PNG)
 
 <mark>
 RUN useradd -ms /bin/bash [NeuerUserName] \
@@ -83,7 +83,7 @@ Im Screenshot sieht man nur, dass ich mit dem neuen User eingeloggt bin und ich 
 Möglich ist es auch die container mit read only zu starten was wie der name schon sagt nur zum anschauen des Containers ist. So können keine Änderungen am System vorgenommen werden auch nicht vom Root user:
 <mark>docker run --read-only -d -t --name [NameDesContainer] [Image]</mark>
 
-![cadvisor]()
+![ReadOnly](https://github.com/sandro832/M300-LB02/blob/main/Dokumentation/Images/Readonly.PNG)
 
 
 Quelle: https://www.computerwoche.de/a/die-wichtigsten-vor-und-nachteile-von-docker-containern,3546671
