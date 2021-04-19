@@ -1,4 +1,4 @@
-### Docker
+# Docker
 Docker legt Programme samt ihrer Abhängigkeiten in Images ab. Diese bilden die Basis für virtualisierte Container, die auf nahezu jedem Betriebssystem lauffähig sind. So werden Anwendungen portabel und unkompliziert, sei es während der Entwicklung oder beim Skalieren von SaaS-Clustern.
 
 Docker ist eine Software, welche die Container-Virtualisierung von Anwendungen ermöglicht. Anwendungen können inklusive ihrer Abhängigkeiten in ein Image gepackt werden. Mittels einer speziellen Engine kann die so verpackte Anwendung dann in einem Docker Container ausgeführt werden.
@@ -61,9 +61,30 @@ Als lezter Schritt musste ich noch die Verbindung testen. Das konnte ich ganz ei
 
 ![Webtest](https://github.com/sandro832/M300-LB02/blob/main/Dokumentation/Images/Webtest.PNG)
 
-Sicherheit
+## Sicherheit
 
 Wie bei jeder neuen Software-Technologie gilt auch für Docker-Container: Sie sind keine Wunderwaffe und können alleine nicht jedes Problem lösen. Zwar kann Software in einem Container standardmäßig sicherer sein als Software, die auf einem Bare-Metal-System läuft. Allerdings ist diese Sicherheit trügerisch, denn sie sagt nichts über die Sicherheitsstandards außerhalb des Docker-Containers, beziehungsweise dessen Umgebung aus. Selbstverständlich können Container einer Anwendung eine zusätzliche Sicherheitsebene hinzufügen, aber nur als Teil eines allgemeinen Konzeptes zur Sicherung einer Anwendung im Gesamtkontext.
+
+### Nicht den root User als Standarduser verwenden
+
+Es ergibt Sinn, dass man sich nicht als root User einloggt, damit man kritische sudo-Befehle nicht ohne Passwort ausführen kann. Ohne das hat der Container ein zusätliches Sicherheitsrisiko da änderungen einfach so gemacht werden können ohne immer das Passwort einzugeben. Mit folgender konfiguration im Dockerfile sperrt man den sudo user:
+
+![cadvisor]()
+
+<mark>
+RUN useradd -ms /bin/bash [NeuerUserName] \
+USER [NeuerUserName] \
+WORKDIR /home/[NeuerUserName]
+</mark>
+Der letzte Befehl ist aus sicherheitstechnischen Gründen nicht notwenid, da dieser nur die Direcotry, in welchem man am Anfang ist ändert.
+Im Screenshot sieht man nur, dass ich mit dem neuen User eingeloggt bin und ich keinen Befehl mit "sudo" ausführen konnte ohne Passwort. 
+
+### Read only Lock
+Möglich ist es auch die container mit read only zu starten was wie der name schon sagt nur zum anschauen des Containers ist. So können keine Änderungen am System vorgenommen werden auch nicht vom Root user:
+<mark>docker run --read-only -d -t --name [NameDesContainer] [Image]</mark>
+
+![cadvisor]()
+
 
 Quelle: https://www.computerwoche.de/a/die-wichtigsten-vor-und-nachteile-von-docker-containern,3546671
 
