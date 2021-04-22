@@ -148,4 +148,4 @@ dans ganze applien, sodass das Kubernetes Cluster erstellt wird.
 
 ![Kubernetes2](https://github.com/sandro832/M300-LB02/blob/main/Dokumentation/Images/Kubernetes%202.PNG)
 
-![Kubernetes3](hhttps://github.com/sandro832/M300-LB02/blob/main/Dokumentation/Images/Kubernetes%203.PNG)
+![Kubernetes3](https://github.com/sandro832/M300-LB02/blob/main/Dokumentation/Images/Kubernetes%203.PNG)
