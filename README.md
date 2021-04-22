@@ -138,7 +138,7 @@ Kubernetes bietet eine containerzentrierte Managementumgebung. Es koordiniert di
 
 Hier ist ein yaml fiel das ich selbst geschrieben habe es dient als deployment von einem Webserver.
 
-![Dockerhub](https://github.com/sandro832/M300-LB02/blob/main/Dokumentation/Images/Dockerhub.PNG)
+![Dockerhub1](https://github.com/sandro832/M300-LB02/blob/main/Dokumentation/Images/kubernetes%201.PNG)
 
 Nun kann man mit:
 <mark>kubectl apply -f [filename].yaml</mark>
@@ -146,6 +146,6 @@ dans ganze applien, sodass das Kubernetes Cluster erstellt wird.
 
 ### Bonus Load balancer yaml file
 
-![Dockerhub](https://github.com/sandro832/M300-LB02/blob/main/Dokumentation/Images/Dockerhub.PNG)
+![Dockerhub2](https://github.com/sandro832/M300-LB02/blob/main/Dokumentation/Images/Kubernetes%202.PNG)
 
-![Dockerhub](https://github.com/sandro832/M300-LB02/blob/main/Dokumentation/Images/Dockerhub.PNG)
+![Dockerhub3](hhttps://github.com/sandro832/M300-LB02/blob/main/Dokumentation/Images/Kubernetes%203.PNG)
