@@ -97,4 +97,42 @@ Noch zu beachten ist das man ein Port wählt der nicht besetzt ist da es sonst z
 
 ![cadvisor](https://github.com/sandro832/M300-LB02/blob/main/Dokumentation/Images/Cadvisor.PNG)
 
+# Docker Hub
 
+Image hochladen auf Docker hub
+
+Zuerst mit "docker run" ein Container erstellen, mit dem Image, das auf dockerhub landen sollte.
+Danach führt man im CMD folgenden Command aus:
+
+<mark>docker commit [Container ID des oben erstellten Containers] [Dockerhub Username]/[Gewünschter Name]:[Tag]</mark>
+
+Danach kan man das mit diesemBefehl auf Docker Hub pushen:
+
+<mark> docker push [Docker Hub Username]/[GewünschterName]:[Tag]</mark>
+
+Bild
+![cadvisor](https://github.com/sandro832/M300-LB02/blob/main/Dokumentation/Images/Cadvisor.PNG)
+
+
+
+
+# Kubernetes
+
+### Was ist Kubernetes?
+
+Diese Seite ist eine Übersicht über Kubernetes.
+
+Kubernetes ist eine portable, erweiterbare Open-Source-Plattform zur Verwaltung von containerisierten Arbeitslasten und Services, die sowohl die deklarative Konfiguration als auch die Automatisierung erleichtert. Es hat einen großes, schnell wachsendes Ökosystem. Kubernetes Dienstleistungen, Support und Tools sind weit verbreitet.
+
+Google hat das Kubernetes-Projekt 2014 als Open-Source-Projekt zur Verfügung gestellt. Kubernetes baut auf anderthalb Jahrzehnten Erfahrung auf, die Google mit der Ausführung von Produktions-Workloads in großem Maßstab hat, kombiniert mit den besten Ideen und Praktiken der Community.
+Warum brauche ich Kubernetes und was kann ich damit tun?
+
+### Was kan Kubernetes
+
+Kubernetes hat eine Reihe von Funktionen. Es kann gesehen werden als:
+
+    eine Containerplattform
+    eine Microservices-Plattform
+    eine portable Cloud-Plattform und vieles mehr.
+
+Kubernetes bietet eine containerzentrierte Managementumgebung. Es koordiniert die Computer-, Netzwerk- und Speicherinfrastruktur im Namen der Benutzer-Workloads. Dies bietet einen Großteil der Einfachheit von Platform as a Service (PaaS) mit der Flexibilität von Infrastructure as a Service (IaaS) und ermöglicht die Portabilität zwischen Infrastrukturanbietern.
