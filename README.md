@@ -110,10 +110,7 @@ Danach kan man das mit diesemBefehl auf Docker Hub pushen:
 
 <mark> docker push [Docker Hub Username]/[GewünschterName]:[Tag]</mark>
 
-Bild
-![cadvisor](https://github.com/sandro832/M300-LB02/blob/main/Dokumentation/Images/Cadvisor.PNG)
-
-
+![Dockerhub](https://github.com/sandro832/M300-LB02/blob/main/Dokumentation/Images/Dockerhub.PNG)
 
 
 # Kubernetes
@@ -136,3 +133,19 @@ Kubernetes hat eine Reihe von Funktionen. Es kann gesehen werden als:
     eine portable Cloud-Plattform und vieles mehr.
 
 Kubernetes bietet eine containerzentrierte Managementumgebung. Es koordiniert die Computer-, Netzwerk- und Speicherinfrastruktur im Namen der Benutzer-Workloads. Dies bietet einen Großteil der Einfachheit von Platform as a Service (PaaS) mit der Flexibilität von Infrastructure as a Service (IaaS) und ermöglicht die Portabilität zwischen Infrastrukturanbietern.
+
+### Kubernetes funktionsweise
+
+Hier ist ein yaml fiel das ich selbst geschrieben habe es dient als deployment von einem Webserver.
+
+![Dockerhub](https://github.com/sandro832/M300-LB02/blob/main/Dokumentation/Images/Dockerhub.PNG)
+
+Nun kann man mit:
+<mark>kubectl apply -f [filename].yaml</mark>
+dans ganze applien, sodass das Kubernetes Cluster erstellt wird. 
+
+### Bonus Load balancer yaml file
+
+![Dockerhub](https://github.com/sandro832/M300-LB02/blob/main/Dokumentation/Images/Dockerhub.PNG)
+
+![Dockerhub](https://github.com/sandro832/M300-LB02/blob/main/Dokumentation/Images/Dockerhub.PNG)
